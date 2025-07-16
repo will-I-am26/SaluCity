@@ -1,15 +1,15 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+//using SpatialSys.UnitySDK;
 
 public class FaceCameraX : MonoBehaviour
 {
-    private ICameraService cameraService;
+    //private ICameraService cameraService;
     private GameObject rotationParent;
     public Transform rotationCenter;
 
     void Start()
     {
-        cameraService = SpatialBridge.cameraService;
+        //cameraService = SpatialBridge.cameraService;
 
         rotationParent = new GameObject("RotationParent");
 
@@ -23,7 +23,7 @@ public class FaceCameraX : MonoBehaviour
 
     void Update()
     {
-        if (cameraService != null && rotationCenter != null)
+        /*if (cameraService != null && rotationCenter != null)
         {
             Vector3 cameraPosition = cameraService.position;
 
@@ -34,6 +34,6 @@ public class FaceCameraX : MonoBehaviour
             Quaternion rotationOffset = Quaternion.Euler(0, -90, 0);
             targetRotation = targetRotation * rotationOffset;
             rotationParent.transform.rotation = Quaternion.Slerp(rotationParent.transform.rotation, targetRotation, Time.deltaTime * 10f);
-        }
+        }*/
     }
 }

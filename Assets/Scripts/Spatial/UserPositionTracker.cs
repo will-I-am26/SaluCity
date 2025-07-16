@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-using SpatialSys.UnitySDK;
+//using SpatialSys.UnitySDK;
 using System.Text;
 using TMPro;
 
@@ -27,7 +27,7 @@ public class PositionDataList
 
 public class UserPositionTracker : MonoBehaviour
 {
-    private IAvatar localAvatar;
+    //private IAvatar localAvatar;
     private string userName;
     public TMP_InputField userNameInputField;
     private PositionDataList positionDataList = new PositionDataList();
@@ -42,7 +42,7 @@ public class UserPositionTracker : MonoBehaviour
     void Start()
     {
         timer = interval;
-        localAvatar = SpatialBridge.actorService.localActor.avatar;
+        //localAvatar = SpatialBridge.actorService.localActor.avatar;
     }
 
     public void StartRecord ()
@@ -83,14 +83,14 @@ public class UserPositionTracker : MonoBehaviour
 
     void RecordPosition()
     {
-        Vector3 userPosition = localAvatar.position;
+        //Vector3 userPosition = localAvatar.position;
         float currentTime = Time.time - startTime;
         PositionData positionData = new PositionData
         {
             userName = userName,
             date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-            posX = userPosition.x,
-            posZ = userPosition.z,
+            //posX = userPosition.x,
+            //posZ = userPosition.z,
             typeEvent = typeEvent,
             mode = mode,
             time = currentTime.ToString("F2") + " seconds"

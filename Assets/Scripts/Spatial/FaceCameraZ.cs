@@ -1,15 +1,15 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+//using SpatialSys.UnitySDK;
 
 public class FaceCameraZ : MonoBehaviour
 {
-    private ICameraService cameraService;
+    //private ICameraService cameraService;
     private GameObject rotationParent;
     public Transform rotationCenter;
 
     void Start()
     {
-        cameraService = SpatialBridge.cameraService;
+        //cameraService = SpatialBridge.cameraService;
 
         rotationParent = new GameObject("RotationParent");
 
@@ -23,17 +23,17 @@ public class FaceCameraZ : MonoBehaviour
 
     void Update()
     {
-        if (cameraService != null && rotationCenter != null)
-        {
-            Vector3 cameraPosition = cameraService.position;
+        //if (cameraService != null && rotationCenter != null)
+        //{
+        //    Vector3 cameraPosition = cameraService.position;
 
-            Vector3 directionToCamera = cameraPosition - rotationParent.transform.position;
-            directionToCamera.y = 0;
+        //    Vector3 directionToCamera = cameraPosition - rotationParent.transform.position;
+        //    directionToCamera.y = 0;
 
-            Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
-            Quaternion rotationOffset = Quaternion.Euler(0, 0, 0);
-            targetRotation = targetRotation * rotationOffset;
-            rotationParent.transform.rotation = Quaternion.Slerp(rotationParent.transform.rotation, targetRotation, Time.deltaTime * 10f);
-        }
+        //    Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
+        //    Quaternion rotationOffset = Quaternion.Euler(0, 0, 0);
+        //    targetRotation = targetRotation * rotationOffset;
+        //    rotationParent.transform.rotation = Quaternion.Slerp(rotationParent.transform.rotation, targetRotation, Time.deltaTime * 10f);
+        //}
     }
 }
